@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231101 20:57:50.610" rpa="false" schemaversion="4">
+<suite id="s1" name="desafioGB" source="C:\Users\dfabricio\Desktop\desafioGB">
+<suite id="s1-s1" name="Robot Framework" source="C:\Users\dfabricio\Desktop\desafioGB\robot_framework">
+<suite id="s1-s1-s1" name="Web" source="C:\Users\dfabricio\Desktop\desafioGB\robot_framework\web">
+<suite id="s1-s1-s1-s1" name="Tests" source="C:\Users\dfabricio\Desktop\desafioGB\robot_framework\web\tests">
+<suite id="s1-s1-s1-s1-s1" name="realizarCadastro" source="C:\Users\dfabricio\Desktop\desafioGB\robot_framework\web\tests\realizarCadastro.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Realizar Cadastro" line="10">
+<kw name="Go To">
+<arg>${url_linkedin}</arg>
+<msg timestamp="20231101 20:57:52.143" level="FAIL">Multiple keywords with name 'Go To' found. Give the full name of the keyword you want to use:
+    Browser.Go To
+    SeleniumLibrary.Go To</msg>
+<status status="FAIL" starttime="20231101 20:57:52.142" endtime="20231101 20:57:52.144"/>
+</kw>
+<status status="FAIL" starttime="20231101 20:57:52.136" endtime="20231101 20:57:52.145">Multiple keywords with name 'Go To' found. Give the full name of the keyword you want to use:
+    Browser.Go To
+    SeleniumLibrary.Go To</status>
+</test>
+<status status="FAIL" starttime="20231101 20:57:50.670" endtime="20231101 20:57:52.187"/>
+</suite>
+<status status="FAIL" starttime="20231101 20:57:50.666" endtime="20231101 20:57:52.223"/>
+</suite>
+<status status="FAIL" starttime="20231101 20:57:50.663" endtime="20231101 20:57:52.227"/>
+</suite>
+<status status="FAIL" starttime="20231101 20:57:50.658" endtime="20231101 20:57:52.230"/>
+</suite>
+<status status="FAIL" starttime="20231101 20:57:50.614" endtime="20231101 20:57:52.233"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="desafioGB">desafioGB</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Robot Framework">desafioGB.Robot Framework</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Web">desafioGB.Robot Framework.Web</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Tests">desafioGB.Robot Framework.Web.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1-s1" name="realizarCadastro">desafioGB.Robot Framework.Web.Tests.realizarCadastro</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

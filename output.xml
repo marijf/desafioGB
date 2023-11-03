@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231103 11:21:01.418" rpa="false" schemaversion="4">
+<suite id="s1" name="Linkedin Tests" source="c:\Users\dfabricio\Desktop\desafioGB\robot_framework\web\tests\linkedin_tests.robot">
+<test id="s1-t1" name="Acessar Conta Cadastrada" line="21">
+<kw name="Acessa linkedin" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_linkedin}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231103 11:21:02.041" level="INFO">Opening browser 'chrome' to base url 'https://www.linkedin.com/home'.</msg>
+<status status="PASS" starttime="20231103 11:21:02.041" endtime="20231103 11:21:04.933"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231103 11:21:04.934" endtime="20231103 11:21:05.051"/>
+</kw>
+<status status="PASS" starttime="20231103 11:21:02.040" endtime="20231103 11:21:05.052"/>
+</kw>
+<kw name="Loga Conta Usuario Valido" library="linkedin_page">
+<kw name="Clica em Entrar" library="linkedin_page">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath://a[contains(@href,'nav-header-signin')]</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231103 11:21:05.057" endtime="20231103 11:21:05.109"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://a[contains(@href,'nav-header-signin')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231103 11:21:05.110" level="INFO">Clicking element 'xpath://a[contains(@href,'nav-header-signin')]'.</msg>
+<status status="PASS" starttime="20231103 11:21:05.109" endtime="20231103 11:21:05.709"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sub_heading}</var>
+<arg>xpath://p[@class='header__content__subheading '][contains(.,'Acompanhe as novidades do seu mundo profissional')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231103 11:21:05.775" level="INFO">${sub_heading} = Acompanhe as novidades do seu mundo profissional</msg>
+<status status="PASS" starttime="20231103 11:21:05.710" endtime="20231103 11:21:05.776"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${sub_heading}</arg>
+<arg>Acompanhe as novidades do seu mundo profissional</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231103 11:21:05.776" endtime="20231103 11:21:05.776"/>
+</kw>
+<status status="PASS" starttime="20231103 11:21:05.056" endtime="20231103 11:21:05.776"/>
+</kw>
+<kw name="Wait and Click on Element" library="base">
+<arg>xpath://input[contains(@id,'username')]</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231103 11:21:05.777" endtime="20231103 11:21:05.805"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${CURRENT_VALUE_COUNT}</var>
+<value>50</value>
+<iter>
+<var name="${CURRENT_VALUE_COUNT}">0</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231103 11:21:05.806" level="INFO">Clicking element 'xpath://input[contains(@id,'username')]'.</msg>
+<status status="PASS" starttime="20231103 11:21:05.806" endtime="20231103 11:21:05.859"/>
+</kw>
+<msg timestamp="20231103 11:21:05.859" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20231103 11:21:05.806" endtime="20231103 11:21:05.859"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${status}' == 'True'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<msg timestamp="20231103 11:21:05.860" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20231103 11:21:05.859" endtime="20231103 11:21:05.860"/>
+</kw>
+<status status="PASS" starttime="20231103 11:21:05.805" endtime="20231103 11:21:05.860"/>
+</iter>
+<status status="PASS" starttime="20231103 11:21:05.805" endtime="20231103 11:21:05.860"/>
+</for>
+<status status="PASS" starttime="20231103 11:21:05.776" endtime="20231103 11:21:05.860"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[contains(@id,'username')]</arg>
+<arg>helone5967@soebing.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231103 11:21:05.861" level="INFO">Typing text 'helone5967@soebing.com' into text field 'xpath://input[contains(@id,'username')]'.</msg>
+<status status="PASS" starttime="20231103 11:21:05.861" endtime="20231103 11:21:05.971"/>
+</kw>
+<kw name="Wait and Click on Element" library="base">
+<arg>xpath://input[contains(@id,'password')]</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231103 11:21:05.972" endtime="20231103 11:21:06.000"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${CURRENT_VALUE_COUNT}</var>
+<value>50</value>
+<iter>
+<var name="${CURRENT_VALUE_COUNT}">0</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231103 11:21:06.001" level="INFO">Clicking element 'xpath://input[contains(@id,'password')]'.</msg>
+<status status="PASS" starttime="20231103 11:21:06.001" endtime="20231103 11:21:06.055"/>
+</kw>
+<msg timestamp="20231103 11:21:06.055" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20231103 11:21:06.001" endtime="20231103 11:21:06.055"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${status}' == 'True'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<msg timestamp="20231103 11:21:06.055" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20231103 11:21:06.055" endtime="20231103 11:21:06.056"/>
+</kw>
+<status status="PASS" starttime="20231103 11:21:06.000" endtime="20231103 11:21:06.056"/>
+</iter>
+<status status="PASS" starttime="20231103 11:21:06.000" endtime="20231103 11:21:06.057"/>
+</for>
+<status status="PASS" starttime="20231103 11:21:05.971" endtime="20231103 11:21:06.057"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[contains(@id,'password')]</arg>
+<arg>Helena2345+</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231103 11:21:06.057" level="INFO">Typing text 'Helena2345+' into text field 'xpath://input[contains(@id,'password')]'.</msg>
+<status status="PASS" starttime="20231103 11:21:06.057" endtime="20231103 11:21:06.120"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://button[contains(@class,'button--floating')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231103 11:21:06.120" level="INFO">Clicking element 'xpath://button[contains(@class,'button--floating')]'.</msg>
+<status status="PASS" starttime="20231103 11:21:06.120" endtime="20231103 11:21:07.168"/>
+</kw>
+<kw name="Close Verification" library="base">
+<kw name="Execute Manual Step" library="Dialogs">
+<arg>Realize uma ação!</arg>
+<arg>default_error=${False}</arg>
+<doc>Pauses execution until user sets the keyword status.</doc>
+<status status="PASS" starttime="20231103 11:21:07.169" endtime="20231103 11:21:18.805"/>
+</kw>
+<status status="PASS" starttime="20231103 11:21:07.168" endtime="20231103 11:21:18.805"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231103 11:21:18.965" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-87.png"&gt;&lt;img src="selenium-screenshot-87.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231103 11:21:18.806" endtime="20231103 11:21:18.966"/>
+</kw>
+<status status="PASS" starttime="20231103 11:21:05.054" endtime="20231103 11:21:18.966"/>
+</kw>
+<kw name="Valida Nome Usuario" library="linkedin_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://div[@class='t-16 t-black t-bold'][contains(.,'helena dias')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20231103 11:21:24.193" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-88.png"&gt;&lt;img src="selenium-screenshot-88.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231103 11:21:24.194" level="FAIL">Element 'xpath://div[@class='t-16 t-black t-bold'][contains(.,'helena dias')]' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20231103 11:21:18.967" endtime="20231103 11:21:24.198"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${nome_do_usuario}</var>
+<arg>xpath://div[@class='t-16 t-black t-bold'][contains(.,'helena dias')]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="NOT RUN" starttime="20231103 11:21:24.198" endtime="20231103 11:21:24.199"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${nome_do_usuario.text}</arg>
+<arg>helena dias</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20231103 11:21:24.199" endtime="20231103 11:21:24.199"/>
+</kw>
+<status status="FAIL" starttime="20231103 11:21:18.967" endtime="20231103 11:21:24.199"/>
+</kw>
+<kw name="Fechar navegador" library="base" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20231103 11:21:24.201" endtime="20231103 11:21:30.414"/>
+</kw>
+<status status="PASS" starttime="20231103 11:21:24.200" endtime="20231103 11:21:30.414"/>
+</kw>
+<status status="FAIL" starttime="20231103 11:21:02.039" endtime="20231103 11:21:30.416">Element 'xpath://div[@class='t-16 t-black t-bold'][contains(.,'helena dias')]' not visible after 5 seconds.</status>
+</test>
+<status status="FAIL" starttime="20231103 11:21:01.422" endtime="20231103 11:21:30.420"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Linkedin Tests">Linkedin Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
